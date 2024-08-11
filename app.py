@@ -103,4 +103,7 @@ def battle_status(battle_id):
     print(f"Status of battle {battle_id}: {status['status']}")
     return jsonify(status)
 
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))  # Default to port 5000 if no PORT env variable is found
+    app.run(host='0.0.0.0', port=port)
 
