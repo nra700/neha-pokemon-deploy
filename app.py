@@ -103,5 +103,4 @@ def battle_status(battle_id):
     print(f"Status of battle {battle_id}: {status['status']}")
     return jsonify(status)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
