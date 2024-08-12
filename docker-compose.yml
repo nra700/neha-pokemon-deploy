@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: .
+    command: celery -A your_celery_app worker --loglevel=info
+    depends_on:
+      - redis
+    environment:
+      - CELERY_BROKER_URL=rediss://red-cqsq9gt6l47c73a5n6n0:VrvgesG2M45KnGBH0S5SuDCpRsDK5VLc@oregon-redis.render.com:6379
+      - CELERY_RESULT_BACKEND=rediss://red-cqsq9gt6l47c73a5n6n0:VrvgesG2M45KnGBH0S5SuDCpRsDK5VLc@oregon-redis.render.com:6379
