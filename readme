@@ -1,0 +1,12 @@
+POKEMON FLASK APPLICATION
+
+This Flask application simulates Pokémon battles using Celery and Redis for asynchronous task processing.
+
+Endpoints:
+GET /list_pokemons: Lists paginated Pokémon data.
+POST /start_battle: Starts a Pokémon battle between two Pokémon.
+GET /battle_status/<battle_id>: Retrieves the status of a specific battle.
+Tech Stack:
+Flask: Web framework.
+Celery: Task queue for running asynchronous battles.
+Redis: Broker and result backend for Celery.
