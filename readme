@@ -4,8 +4,8 @@ This Flask application simulates Pokémon battles using Celery and Redis for asy
 
 Endpoints:
 GET /list_pokemons: Lists paginated Pokémon data.
-POST /start_battle: Starts a Pokémon battle between two Pokémon.
-GET /battle_status/<battle_id>: Retrieves the status of a specific battle.
+POST /start_battle: Starts a Pokémon battle between two Pokémon and returns battle id, this battle_id will be used to get battle status.
+GET /battle_status/<battle_id>: Retrieves the status of a specific battle, using the battle_id received in the start_battle's response.
 Tech Stack:
 Flask: Web framework.
 Celery: Task queue for running asynchronous battles.
